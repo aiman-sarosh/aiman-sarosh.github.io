@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>Aiman Sarosh | Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
 
@@ -14,12 +14,15 @@
             margin:0;
             padding:0;
             box-sizing:border-box;
+        }
+
+        html{
             scroll-behavior:smooth;
         }
 
         body{
             font-family:'Poppins',sans-serif;
-            background:#050505;
+            background:#030303;
             color:white;
             overflow-x:hidden;
         }
@@ -29,9 +32,9 @@
             position:fixed;
             inset:0;
             background:
-                radial-gradient(circle at top left,#7b2ff755,transparent 25%),
-                radial-gradient(circle at bottom right,#00c3ff33,transparent 25%);
-            z-index:-1;
+                radial-gradient(circle at top left,#7b2ff744,transparent 25%),
+                radial-gradient(circle at bottom right,#00c3ff22,transparent 25%);
+            z-index:-2;
         }
 
         a{
@@ -39,84 +42,122 @@
             color:inherit;
         }
 
+        /* ---------------- NAVBAR ---------------- */
+
+        nav{
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index:1000;
+            backdrop-filter:blur(18px);
+            background:rgba(0,0,0,0.45);
+            border-bottom:1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container{
+            max-width:1400px;
+            margin:auto;
+            padding:18px 7%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            font-size:1.4rem;
+            font-weight:700;
+            background:linear-gradient(90deg,#fff,#7b2ff7,#00c3ff);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:30px;
+        }
+
+        .nav-links a{
+            color:#d6d6d6;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#7b2ff7;
+        }
+
         /* ---------------- HERO ---------------- */
 
         .hero{
             min-height:100vh;
             display:flex;
-            flex-direction:column;
-            justify-content:center;
             align-items:center;
+            justify-content:center;
             text-align:center;
-            padding:40px;
+            padding:140px 7% 100px;
+            position:relative;
+        }
+
+        .hero-content{
+            max-width:950px;
         }
 
         .hero h1{
-            font-size:5rem;
-            font-weight:700;
+            font-size:5.5rem;
+            font-weight:800;
+            line-height:1.1;
             background:linear-gradient(90deg,#ffffff,#7b2ff7,#00c3ff);
             -webkit-background-clip:text;
             -webkit-text-fill-color:transparent;
-            animation:glow 3s infinite alternate;
-        }
-
-        @keyframes glow{
-            from{
-                filter:drop-shadow(0 0 8px #7b2ff7);
-            }
-            to{
-                filter:drop-shadow(0 0 20px #00c3ff);
-            }
         }
 
         .hero h2{
-            margin-top:20px;
-            font-size:1.4rem;
-            color:#cfcfcf;
+            margin-top:25px;
+            font-size:1.5rem;
             font-weight:400;
+            color:#c9c9c9;
         }
 
         .hero p{
-            max-width:850px;
-            margin-top:25px;
-            line-height:1.8;
-            color:#9e9e9e;
+            margin-top:30px;
+            color:#9c9c9c;
+            line-height:1.9;
             font-size:1.05rem;
         }
 
         .hero-buttons{
-            margin-top:40px;
+            margin-top:45px;
             display:flex;
+            justify-content:center;
             gap:20px;
             flex-wrap:wrap;
-            justify-content:center;
         }
 
-        .btn{
-            padding:14px 30px;
-            border-radius:14px;
+        .hero-btn{
+            padding:15px 34px;
+            border-radius:16px;
+            background:#0f0f0f;
+            border:1px solid #262626;
+            transition:0.35s;
             font-weight:600;
-            transition:0.3s;
-            border:1px solid #ffffff22;
-            background:#111;
         }
 
-        .btn:hover{
-            transform:translateY(-4px);
+        .hero-btn:hover{
+            transform:translateY(-5px);
             background:linear-gradient(135deg,#7b2ff7,#00c3ff);
-            box-shadow:0 0 25px #7b2ff788;
+            box-shadow:0 0 35px #7b2ff766;
         }
 
         /* ---------------- SECTION ---------------- */
 
         section{
-            padding:100px 8%;
+            padding:100px 7%;
         }
 
         .section-title{
-            font-size:2.8rem;
-            margin-bottom:50px;
             text-align:center;
+            font-size:3rem;
+            margin-bottom:60px;
             background:linear-gradient(90deg,#ffffff,#7b2ff7);
             -webkit-background-clip:text;
             -webkit-text-fill-color:transparent;
@@ -124,58 +165,58 @@
 
         /* ---------------- ABOUT ---------------- */
 
-        .about{
+        .about-grid{
             display:grid;
             grid-template-columns:1fr 1fr;
-            gap:50px;
+            gap:35px;
         }
 
         .glass{
-            background:rgba(255,255,255,0.05);
+            background:rgba(255,255,255,0.04);
             border:1px solid rgba(255,255,255,0.08);
-            border-radius:25px;
-            padding:35px;
             backdrop-filter:blur(18px);
+            border-radius:28px;
+            padding:35px;
             transition:0.4s;
         }
 
         .glass:hover{
-            transform:translateY(-8px);
-            box-shadow:0 0 25px #7b2ff733;
+            transform:translateY(-10px);
+            box-shadow:0 0 30px #7b2ff733;
         }
 
         .glass h3{
-            margin-bottom:20px;
             font-size:1.5rem;
-            color:#fff;
+            margin-bottom:20px;
         }
 
         .glass p,
         .glass li{
-            color:#c2c2c2;
-            line-height:1.8;
+            color:#bcbcbc;
+            line-height:1.9;
         }
 
         .glass ul{
             padding-left:20px;
+            margin-top:15px;
         }
 
         /* ---------------- PROJECTS ---------------- */
 
         .projects-grid{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:35px;
+            grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+            gap:40px;
         }
 
         .project-card{
-            background:rgba(255,255,255,0.05);
-            border-radius:24px;
-            padding:30px;
-            border:1px solid rgba(255,255,255,0.08);
-            transition:0.4s;
             position:relative;
             overflow:hidden;
+            background:rgba(255,255,255,0.04);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:30px;
+            padding:38px;
+            transition:0.4s;
         }
 
         .project-card::before{
@@ -185,6 +226,7 @@
             background:linear-gradient(135deg,#7b2ff711,#00c3ff11);
             opacity:0;
             transition:0.4s;
+            pointer-events:none;
         }
 
         .project-card:hover::before{
@@ -193,96 +235,113 @@
 
         .project-card:hover{
             transform:translateY(-10px) scale(1.02);
-            box-shadow:0 0 30px #7b2ff744;
+            box-shadow:0 0 40px #7b2ff744;
         }
 
         .project-card h3{
-            font-size:1.5rem;
-            margin-bottom:15px;
+            font-size:2rem;
+            margin-bottom:20px;
         }
 
         .project-card p{
-            color:#bdbdbd;
-            line-height:1.7;
+            color:#b8b8b8;
+            line-height:1.9;
         }
 
         .tech-stack{
-            margin-top:20px;
             display:flex;
             flex-wrap:wrap;
-            gap:10px;
+            gap:12px;
+            margin-top:28px;
         }
 
         .tech{
-            padding:8px 14px;
+            padding:10px 16px;
             border-radius:999px;
-            background:#141414;
-            border:1px solid #2a2a2a;
-            font-size:0.85rem;
-            color:#d0d0d0;
+            background:#101010;
+            border:1px solid #2c2c2c;
+            color:#d6d6d6;
+            font-size:0.9rem;
         }
 
         .project-links{
-            margin-top:25px;
+            position:relative;
+            z-index:5;
+            margin-top:30px;
             display:flex;
-            gap:15px;
             flex-wrap:wrap;
+            gap:15px;
         }
 
         .project-links a{
-            padding:10px 18px;
-            border-radius:12px;
-            background:#141414;
-            border:1px solid #2f2f2f;
+            padding:13px 22px;
+            border-radius:15px;
+            background:#101010;
+            border:1px solid #2c2c2c;
             transition:0.3s;
+            cursor:pointer;
+            font-weight:500;
         }
 
         .project-links a:hover{
             background:linear-gradient(135deg,#7b2ff7,#00c3ff);
+            transform:translateY(-3px);
         }
 
         /* ---------------- SKILLS ---------------- */
 
         .skills-grid{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
             gap:25px;
         }
 
         .skill-card{
-            background:#0f0f0f;
+            background:#0c0c0c;
+            border:1px solid #1f1f1f;
+            border-radius:24px;
             padding:30px;
-            border-radius:20px;
-            border:1px solid #1e1e1e;
         }
 
         .skill-card h4{
-            margin-bottom:15px;
-            font-size:1.2rem;
+            margin-bottom:16px;
+            font-size:1.3rem;
         }
 
         .skill-card p{
-            color:#bdbdbd;
-            line-height:1.7;
+            color:#b8b8b8;
+            line-height:1.8;
         }
 
         /* ---------------- FOOTER ---------------- */
 
         footer{
-            padding:50px;
+            padding:70px 7%;
             text-align:center;
-            color:#888;
-            border-top:1px solid #1f1f1f;
+            border-top:1px solid #1c1c1c;
+            color:#8d8d8d;
         }
 
-        @media(max-width:900px){
+        footer h3{
+            font-size:2rem;
+            margin-bottom:20px;
+            color:white;
+        }
+
+        /* ---------------- RESPONSIVE ---------------- */
+
+        @media(max-width:950px){
 
             .hero h1{
-                font-size:3rem;
+                font-size:3.5rem;
             }
 
-            .about{
+            .about-grid{
                 grid-template-columns:1fr;
+            }
+
+            .nav-links{
+                display:none;
             }
 
         }
@@ -292,79 +351,113 @@
 
 <body>
 
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <div class="logo">
+                Aiman Sarosh
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+            </div>
+
+        </div>
+
+    </nav>
+
     <!-- HERO -->
 
     <section class="hero">
 
-        <h1>Aiman Sarosh</h1>
+        <div class="hero-content">
 
-        <h2>
-            Backend Developer • GenAI Engineer • Realtime Systems Builder
-        </h2>
+            <h1>
+                Aiman Sarosh
+            </h1>
 
-        <p>
-            I build intelligent systems, realtime applications, AI-powered workflows,
-            and scalable backend architectures using FastAPI, WebSockets, GenAI,
-            LangGraph, and modern engineering practices.
-        </p>
+            <h2>
+                Backend Developer • GenAI Engineer • Realtime Systems Builder
+            </h2>
 
-        <div class="hero-buttons">
-            <a href="https://github.com/aiman-sarosh" class="btn">GitHub</a>
-            <a href="#projects" class="btn">View Projects</a>
+            <p>
+                Building intelligent systems, realtime applications,
+                AI-powered workflows, scalable backend architectures,
+                and modern developer tools using FastAPI, WebSockets,
+                LangGraph, AutoGen, and production-focused engineering practices.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="https://github.com/aiman-sarosh" class="hero-btn">
+                    GitHub
+                </a>
+
+                <a href="#projects" class="hero-btn">
+                    Explore Projects
+                </a>
+
+            </div>
+
         </div>
 
     </section>
 
     <!-- ABOUT -->
 
-    <section>
+    <section id="about">
 
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">
+            About Me
+        </h2>
 
-        <div class="about">
+        <div class="about-grid">
 
             <div class="glass">
-                <h3>👨‍💻 Career Journey</h3>
+
+                <h3>
+                    👨‍💻 Career & Engineering
+                </h3>
 
                 <p>
-                    Passionate software developer focused on building
-                    realtime backend systems, AI-integrated applications,
-                    and scalable APIs.
-                </p>
-
-                <br>
-
-                <p>
-                    My interests revolve around:
+                    Passionate developer focused on building
+                    realtime systems, AI-powered workflows,
+                    backend architectures, and scalable APIs.
                 </p>
 
                 <ul>
-                    <li>Realtime architectures</li>
-                    <li>FastAPI ecosystem</li>
-                    <li>WebSocket systems</li>
+                    <li>FastAPI backend systems</li>
+                    <li>Realtime WebSocket architectures</li>
                     <li>Agentic AI workflows</li>
-                    <li>LLM orchestration</li>
-                    <li>Backend engineering</li>
+                    <li>LLM orchestration systems</li>
+                    <li>Cross-platform mobile applications</li>
                 </ul>
 
             </div>
 
             <div class="glass">
-                <h3>📚 Studies & Learning</h3>
+
+                <h3>
+                    📚 Studies & Learning
+                </h3>
 
                 <p>
-                    Continuously learning advanced software engineering and AI concepts.
+                    Continuously exploring advanced backend engineering
+                    and GenAI systems.
                 </p>
 
-                <br>
-
                 <ul>
-                    <li>LangGraph & AutoGen</li>
-                    <li>Multi-agent AI systems</li>
+                    <li>LangGraph</li>
+                    <li>AutoGen</li>
                     <li>RAG pipelines</li>
-                    <li>Async backend architectures</li>
+                    <li>Async architectures</li>
                     <li>Realtime event systems</li>
-                    <li>Mobile application development</li>
+                    <li>AI-integrated productivity tools</li>
                 </ul>
 
             </div>
@@ -377,21 +470,24 @@
 
     <section id="projects">
 
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
 
         <div class="projects-grid">
 
-            <!-- Productivity Assistant -->
+            <!-- PRODUCTIVITY -->
 
             <div class="project-card">
 
-                <h3>⚡ Productivity Assistant</h3>
+                <h3>
+                    ⚡ Productivity Assistant
+                </h3>
 
                 <p>
-                    Realtime productivity assistant backend using FastAPI,
-                    WebSockets, SQLite, and async event broadcasting.
-                    Includes live notifications, event persistence,
-                    and realtime frontend monitoring dashboard.
+                    Realtime productivity assistant backend
+                    using FastAPI, WebSockets, SQLite,
+                    async event broadcasting, and live monitoring.
                 </p>
 
                 <div class="tech-stack">
@@ -403,31 +499,36 @@
                 </div>
 
                 <div class="project-links">
-                    <a href="https://github.com/aiman-sarosh/productivity-assistant">
+
+                    <a href="https://github.com/aiman-sarosh/productivity-assistant" target="_blank">
                         View Code
                     </a>
 
-                    <a href="https://aiman-sarosh.github.io/productivity-assistant-demo">
+                    <a href="https://aiman-sarosh.github.io/productivity-assistant-demo" target="_blank">
                         Live Demo
                     </a>
 
-                    <a href="https://github.com/aiman-sarosh/productivity-assistant/blob/main/backend/main.py">
+                    <a href="https://github.com/aiman-sarosh/productivity-assistant/blob/main/backend/main.py" target="_blank">
                         Backend Source
                     </a>
+
                 </div>
 
             </div>
 
-            <!-- Copter -->
+            <!-- COPTER -->
 
             <div class="project-card">
 
-                <h3>🚁 Copter</h3>
+                <h3>
+                    🚁 Copter
+                </h3>
 
                 <p>
-                    Mobile game project developed with focus on
-                    gameplay interaction, responsive controls,
-                    cross-platform support, and optimized mobile performance.
+                    Mobile game focused on responsive controls,
+                    smooth gameplay interaction,
+                    optimized mobile performance,
+                    and cross-platform experience.
                 </p>
 
                 <div class="tech-stack">
@@ -439,15 +540,15 @@
 
                 <div class="project-links">
 
-                    <a href="https://play.google.com/store/apps/details?id=com.masgames.copter">
+                    <a href="https://play.google.com/store/apps/details?id=com.aimansarosh.copter" target="_blank">
                         Play Store
                     </a>
 
-                    <a href="https://youtube.com/shorts/y5u-SuD5Cc4?si=gaNxthCgi0e_ZUzZ">
+                    <a href="https://www.youtube.com/" target="_blank">
                         Gameplay Video
                     </a>
 
-                    <a href="https://github.com/aiman-sarosh">
+                    <a href="https://github.com/aiman-sarosh" target="_blank">
                         View Project
                     </a>
 
@@ -455,16 +556,18 @@
 
             </div>
 
-            <!-- AI -->
+            <!-- AGENTIC -->
 
             <div class="project-card">
 
-                <h3>🤖 Agentic AI Systems</h3>
+                <h3>
+                    🤖 Agentic AI Systems
+                </h3>
 
                 <p>
                     Experimental AI systems using LangGraph,
-                    AutoGen, OpenAI APIs, and tool-calling workflows
-                    for building intelligent autonomous agents.
+                    AutoGen, OpenAI APIs, tool-calling workflows,
+                    and intelligent autonomous agent orchestration.
                 </p>
 
                 <div class="tech-stack">
@@ -477,7 +580,7 @@
 
                 <div class="project-links">
 
-                    <a href="https://github.com/aiman-sarosh">
+                    <a href="https://github.com/aiman-sarosh" target="_blank">
                         View Code
                     </a>
 
@@ -491,50 +594,68 @@
 
     <!-- SKILLS -->
 
-    <section>
+    <section id="skills">
 
-        <h2 class="section-title">Tech Stack</h2>
+        <h2 class="section-title">
+            Tech Stack
+        </h2>
 
         <div class="skills-grid">
 
             <div class="skill-card">
-                <h4>⚡ Backend</h4>
+
+                <h4>
+                    ⚡ Backend
+                </h4>
+
                 <p>
-                    Python, FastAPI, Node.js,
-                    REST APIs, AsyncIO,
-                    WebSocket architectures
+                    Python, FastAPI, REST APIs,
+                    AsyncIO, WebSocket architectures,
+                    scalable backend engineering.
                 </p>
+
             </div>
 
             <div class="skill-card">
-                <h4>🤖 AI / GenAI</h4>
+
+                <h4>
+                    🤖 AI / GenAI
+                </h4>
+
                 <p>
                     LangGraph, AutoGen,
-                    OpenAI APIs,
-                    RAG systems,
-                    Agentic workflows
+                    OpenAI APIs, RAG systems,
+                    intelligent agent workflows.
                 </p>
+
             </div>
 
             <div class="skill-card">
-                <h4>📱 Frontend & Mobile</h4>
+
+                <h4>
+                    📱 Frontend & Mobile
+                </h4>
+
                 <p>
-                    React,
-                    React Native,
-                    JavaScript,
-                    TypeScript,
-                    HTML/CSS
+                    React, React Native,
+                    TypeScript, JavaScript,
+                    responsive UI engineering.
                 </p>
+
             </div>
 
             <div class="skill-card">
-                <h4>🗄️ Databases</h4>
+
+                <h4>
+                    🗄️ Databases
+                </h4>
+
                 <p>
-                    SQLite,
-                    MongoDB,
-                    SQL,
-                    event persistence systems
+                    SQLite, MongoDB,
+                    SQL systems,
+                    event persistence architectures.
                 </p>
+
             </div>
 
         </div>
@@ -545,13 +666,14 @@
 
     <footer>
 
-        <h3>Aiman Sarosh</h3>
-
-        <br>
+        <h3>
+            Aiman Sarosh
+        </h3>
 
         <p>
-            Building realtime systems, AI-native applications,
-            and intelligent developer tools.
+            Building intelligent systems,
+            realtime applications,
+            and AI-native developer tools.
         </p>
 
         <br>
